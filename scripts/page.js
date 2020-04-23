@@ -105,6 +105,7 @@ for (k = 0; k < 2; k++)
 	tabledivelem.id = side + ":tableHeadDiv";
 	var tableelem = document.createElement("table");
 	tableelem.id = side + ":table";
+	tableelem.setAttribute("align","center");
 	var tableHeadelem = document.createElement("thead");
 	tableHeadelem.id = side + ":tableHead";
 	var tableRowelem = document.createElement("tr");
@@ -129,6 +130,7 @@ for (k = 0; k < 2; k++)
     tabledivelem.id = side + ":tableBodyDiv";
     tabledivelem.style = "height:300px;overflow-y:scroll;";
     tableelem = document.createElement("table");
+	tableelem.setAttribute("align","center");
     tableelem.id = side + ":tableBodyTable";
     tableHeadelem = document.createElement("tbody");
     tableHeadelem.id = side + ":tableBody";
@@ -162,6 +164,7 @@ for (k = 0; k < 2; k++)
     tabledivelem = document.createElement("div");
     tabledivelem.id = side + ":tableFootDiv";
     tableelem = document.createElement("table");
+	tableelem.setAttribute("align","center");
     tableelem.id = side + ":tableFootTable";
 	tableHeadelem = document.createElement("tfoot");
 	tableHeadelem.id = side + ":tableFoot";
