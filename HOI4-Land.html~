@@ -56,10 +56,11 @@
 	</style>
 	<body>
 <div class="tab">
-    <button class="tablinks" id="tab:atk:Tech" onclick="selectTab(event, 'atk:Tech');">Attack Tech</button>
-    <button class="tablinks" id="tab:atk:Div" onclick="selectTab(event, 'atk:Div');">Attack Divisions</button>
-    <button class="tablinks" id="tab:def:Tech" onclick="selectTab(event, 'def:Tech');">Defense Tech</button>
-    <button class="tablinks" id="tab:def:Div" onclick="selectTab(event, 'def:Div');">Defense Divisions</button>
+    <button class="tablinks" id="tab:Summary" onclick="selectTab(event, 'Summary');">Summary</button>
+    <button class="tablinks" onclick="selectTab(event, 'atk:Tech');">Attack Tech</button>
+    <button class="tablinks" onclick="selectTab(event, 'atk:Div');">Attack Divisions</button>
+    <button class="tablinks" onclick="selectTab(event, 'def:Tech');">Defense Tech</button>
+    <button class="tablinks" onclick="selectTab(event, 'def:Div');">Defense Divisions</button>
 </div>
 	<div id="Summary">
 		<table>
