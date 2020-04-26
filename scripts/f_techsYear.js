@@ -1,5 +1,5 @@
 
-function techsYear(who, year) {
+function techsYear(who, year,disableStorageChange) {
     var i;
     var side;
     if (who == "Attacker")
@@ -17,6 +17,8 @@ function techsYear(who, year) {
             if (elem != null)
                 elem.checked = false;
         }
+		if (disableStorageChange == null || disableStorageChange == false)
+			changeStorageCheck(side + ":" + techs[i].name);
     }
     recalculate(who);
-}// JavaScript source code
+}

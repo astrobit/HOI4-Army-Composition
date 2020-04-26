@@ -81,8 +81,9 @@ for (k = 0; k < 2; k++)
 		}
 		var inpelem = document.createElement("input");
 		inpelem.type = "checkbox";
-		inpelem.id = side + ":" + techs[i].name;
-		inpelem.setAttribute("onclick","recalculate('" + sideDescriptor + "','" + techs[i].name + "');");
+		var idlcl = side + ":" + techs[i].name;
+		inpelem.id = idlcl;
+		inpelem.setAttribute("onclick","changeStorageCheck('" + idlcl + "');recalculate('" + sideDescriptor + "','" + techs[i].name + "');");
 		var labelelem = document.createElement("label");
 		labelelem.setAttribute("for",side + ":" + techs[i].name);
 		labelelem.insertAdjacentText("beforeend", techs[i].name);
@@ -150,8 +151,9 @@ for (k = 0; k < 2; k++)
 			var inpElem = document.createElement("input");
 			inpElem.type = "number";
             inpElem.style = "text-align:center;width:30px;";
-			inpElem.id = side + ":Army " + j + units[i].name;
-			inpElem.setAttribute("onchange","recalculate('" + sideDescriptor + "','Army');");
+			var idlcl = side + ":Army " + j + units[i].name;
+			inpElem.id = idlcl;
+			inpElem.setAttribute("onchange","changeStorageNumeric('" + idlcl + "');recalculate('" + sideDescriptor + "','Army');");
 			inpElem.setAttribute("min","0");
 			inpElem.setAttribute("max","25");
 			tableHelem.appendChild(inpElem);
@@ -246,5 +248,25 @@ for (k = 0; k < 2; k++)
 
 selectTab(null,"tab:atk:Div");
 document.getElementById("tab:atk:Div").className += " active";
-techsYear("Attacker",1936);
-techsYear("Defender",1936);
+techsYear("Attacker",1936,false);
+techsYear("Defender",1936,false);
+for (j = 0; j < 2; j++)
+{
+	if (j == 0)
+		side = "atk";
+	else
+		side = "def";
+	for (i = 0; i < techs.length; i++)
+		retrieveStorageCheck(side + ":" + techs[i].name);
+	for (i = 0; i < units.length; i++)
+	{
+		for (k = 1; k <= 5; k++)
+		{
+			var idlcl = side + ":Army " + k + units[i].name;
+			retrieveStorageNumeric(idlcl);
+		}
+	}
+}
+recalculate("Attacker","Army");
+recalculate("Defender","Army");
+
