@@ -1,7 +1,8 @@
 
 class unitclass {
-    constructor(name, width, organization, HP, soft_attack, hard_attack, defense, breakthrough, armor, piercing, hardness, speed, production_cost, reliability) {
+    constructor(name, enabling_tech, width, organization, HP, soft_attack, hard_attack, defense, breakthrough, armor, piercing, hardness, speed, production_cost, reliability) {
         this._name = name;
+		this._enabling_tech = enabling_tech;
         if (soft_attack == null)
             this._soft_attack = -1;
         else
@@ -56,6 +57,7 @@ class unitclass {
             this._width = width;
     }
     get name() { return this._name; }
+	get enabling_tech() { return this._enabling_tech;}
     get soft_attack() { return this._soft_attack; }
     get hard_attack() { return this._hard_attack; }
     get defense() { return this._defense; }
@@ -71,6 +73,7 @@ class unitclass {
     get HP() { return this._HP; }
 
     set name(value) { this._name = value; }
+    set enabling_tech(value) { this._enabling_tech = value; }
     set soft_attack(value) { this._soft_attack = value; }
     set hard_attack(value) { this._hard_attack = value; }
     set defense(value) { this._defense = value; }

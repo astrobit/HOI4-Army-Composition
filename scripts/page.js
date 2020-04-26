@@ -152,6 +152,8 @@ for (k = 0; k < 2; k++)
             inpElem.style = "text-align:center;width:30px;";
 			inpElem.id = side + ":Army " + j + units[i].name;
 			inpElem.setAttribute("onchange","recalculate('" + sideDescriptor + "','Army');");
+			inpElem.setAttribute("min","0");
+			inpElem.setAttribute("max","25");
 			tableHelem.appendChild(inpElem);
 			tableRowelem.appendChild(tableHelem);
 		}	
