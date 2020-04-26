@@ -13,15 +13,15 @@ for (k = 0; k < 2; k++)
 	if (k == 0)
 	{
 		side = "atk";
-		sideDescriptor = "Attacker";
+		sideDescriptor = "atk";
 		sideDescriptorAdvective = "Attacking";
 	}
 	else {
 		side = "def";
-		sideDescriptor = "Defender";
+		sideDescriptor = "def";
 		sideDescriptorAdvective = "Defending";
 	}
-	var years = ["1918","1934","1936","1937","1938","1939","1940","1941","1942","1943","1944","1945","1946","1950"];
+	var years = ["1918","1934","1936","1938","1939","1940","1941","1942","1943","1944","1945","1946","1950"];
 	 
 	var tabdivelem = document.createElement("div");
 	tabdivelem.className = "tabcontent";
@@ -38,7 +38,8 @@ for (k = 0; k < 2; k++)
 	{
 		var inpelem = document.createElement("input");
 		inpelem.type = "button";
-        inpelem.style = "font-size:16px;text-align:center;";
+		inpelem.id = side + ":yb" + years[i];
+        inpelem.style = "font-size:16px;text-align:center;background-color:#7F7F7F;";
 		inpelem.value = years[i];
 		inpelem.setAttribute("onclick","techsYear('" + sideDescriptor + "',"+years[i]+");");
 		divelem.appendChild(inpelem);
@@ -248,8 +249,13 @@ for (k = 0; k < 2; k++)
 
 selectTab(null,"tab:atk:Div");
 document.getElementById("tab:atk:Div").className += " active";
-techsYear("Attacker",1936,false);
-techsYear("Defender",1936,false);
+var lsInit = localStorage.getItem("initialized");
+if (lsInit != "true")
+{
+	techsYear("atk",1936,false);
+	techsYear("def",1936,false);
+	localStorage.setItem("initialized","true");
+}
 for (j = 0; j < 2; j++)
 {
 	if (j == 0)
@@ -267,6 +273,10 @@ for (j = 0; j < 2; j++)
 		}
 	}
 }
-recalculate("Attacker","Army");
-recalculate("Defender","Army");
-
+updateYearButtons();
+determineUnitStats("atk");
+determineUnitStats("def");
+determineUnitBonuses();
+determineArmyStats("atk");
+determineArmyStats("def");
+determineBattleStats();

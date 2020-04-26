@@ -1,12 +1,21 @@
 function changeStorageCheck(source)
 {
 	var elem = document.getElementById(source);
-	localStorage.setItem(source,elem.checked);
+	if (elem.checked)
+		localStorage.setItem(source,"true");
+	else
+		localStorage.setItem(source,"false");
+//	console.log("set " + source + " to " + elem.checked);
 }
 function retrieveStorageCheck(source)
 {
 	var elem = document.getElementById(source);
-	elem.checked = localStorage.getItem(source);
+	var value = localStorage.getItem(source);
+//	console.log("got " + value + " for " + source);
+	if (value == "true")
+		elem.checked = true;
+	else
+		elem.checked = false;
 }
 
 function changeStorageNumeric(source)

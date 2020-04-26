@@ -1,7 +1,7 @@
 
 function determineUnitStats(who) {
     var side, sideidx;
-    if (who == "Attacker") {
+    if (who == "atk") {
         side = "atk";
         sideidx = 0;
     }

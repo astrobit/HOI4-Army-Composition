@@ -2,7 +2,7 @@
 function techsYear(who, year,disableStorageChange) {
     var i;
     var side;
-    if (who == "Attacker")
+    if (who == "atk")
         side = "atk";
     else
         side = "def";
