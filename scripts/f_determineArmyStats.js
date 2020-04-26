@@ -36,35 +36,33 @@ function determineArmyStats(who) {
                 //					var unitidx = sideunitstats[sideidx].unitidx(units[i].name);
                 //					console.log("ui = " + unitidx + " (" + units[i].name + ")");
                 if (sideunitstats[sideidx].unit[i].organization > 0)
-                    armies[sideidx][j].organization += sideunitstats[sideidx].unit[i].organization * num;
+                    armies[sideidx][j].organization += (sideunitstats[sideidx].unit[i].organization + sideunitbonus[sideidx][i].organization) * num;
                 if (sideunitstats[sideidx].unit[i].HP > 0)
-                    armies[sideidx][j].HP += sideunitstats[sideidx].unit[i].HP * num;
+                    armies[sideidx][j].HP += sideunitstats[sideidx].unit[i].HP * num * sideunitbonus[sideidx][i].HP;
                 if (sideunitstats[sideidx].unit[i].soft_attack > 0)
-                    armies[sideidx][j].soft_attack += sideunitstats[sideidx].unit[i].soft_attack * num;
-                if (sideunitstats[sideidx].unit[i].soft_attack > 0)
-                    armies[sideidx][j].soft_attack += sideunitstats[sideidx].unit[i].soft_attack * num;
+                    armies[sideidx][j].soft_attack += sideunitstats[sideidx].unit[i].soft_attack * num * sideunitbonus[sideidx][i].soft_attack;
                 if (sideunitstats[sideidx].unit[i].hard_attack > 0)
-                    armies[sideidx][j].hard_attack += sideunitstats[sideidx].unit[i].hard_attack * num;
+                    armies[sideidx][j].hard_attack += sideunitstats[sideidx].unit[i].hard_attack * num * sideunitbonus[sideidx][i].hard_attack;
                 if (sideunitstats[sideidx].unit[i].defense > 0)
-                    armies[sideidx][j].defense += sideunitstats[sideidx].unit[i].defense * num;
+                    armies[sideidx][j].defense += sideunitstats[sideidx].unit[i].defense * num * sideunitbonus[sideidx][i].defense;
                 if (sideunitstats[sideidx].unit[i].breakthrough > 0)
-                    armies[sideidx][j].breakthrough += sideunitstats[sideidx].unit[i].breakthrough * num;
+                    armies[sideidx][j].breakthrough += sideunitstats[sideidx].unit[i].breakthrough * num * sideunitbonus[sideidx][i].breakthrough;
                 if (sideunitstats[sideidx].unit[i].production_cost > 0)
-                    armies[sideidx][j].production_cost += sideunitstats[sideidx].unit[i].production_cost * num;
+                    armies[sideidx][j].production_cost += sideunitstats[sideidx].unit[i].production_cost * num * sideunitbonus[sideidx][i].production_cost;
                 if (sideunitstats[sideidx].unit[i].hardness > 0)
-                    armies[sideidx][j].hardness += sideunitstats[sideidx].unit[i].hardness * num;
+                    armies[sideidx][j].hardness += sideunitstats[sideidx].unit[i].hardness * num * sideunitbonus[sideidx][i].hardness;
                 if (sideunitstats[sideidx].unit[i].piercing > 0) {
-                    armies[sideidx][j].piercing += sideunitstats[sideidx].unit[i].piercing * num;
-                    if (maxpierce < sideunitstats[sideidx].unit[i].piercing)
-                        maxpierce = sideunitstats[sideidx].unit[i].piercing;
+                    armies[sideidx][j].piercing += sideunitstats[sideidx].unit[i].piercing * num * sideunitbonus[sideidx][i].piercing;
+                    if (maxpierce < sideunitstats[sideidx].unit[i].piercing * sideunitbonus[sideidx][i].piercing)
+                        maxpierce = sideunitstats[sideidx].unit[i].piercing * sideunitbonus[sideidx][i].piercing;
                 }
                 if (sideunitstats[sideidx].unit[i].armor > 0) {
-                    armies[sideidx][j].armor += sideunitstats[sideidx].unit[i].armor * num;
-                    if (maxarmor < sideunitstats[sideidx].unit[i].armor)
-                        maxarmor = sideunitstats[sideidx].unit[i].armor;
+                    armies[sideidx][j].armor += sideunitstats[sideidx].unit[i].armor * num * sideunitbonus[sideidx][i].armor;
+                    if (maxarmor < sideunitstats[sideidx].unit[i].armor * sideunitbonus[sideidx][i].armor)
+                        maxarmor = sideunitstats[sideidx].unit[i].armor * sideunitbonus[sideidx][i].armor;
                 }
                 if (sideunitstats[sideidx].unit[i].reliability > 0)
-                    armies[sideidx][j].reliability += sideunitstats[sideidx].unit[i].reliability * num;
+                    armies[sideidx][j].reliability += sideunitstats[sideidx].unit[i].reliability * num * sideunitbonus[sideidx][i].reliability;
                 if (sideunitstats[sideidx].unit[i].width > 0)
                     armies[sideidx][j].width += sideunitstats[sideidx].unit[i].width * num;
                 if (sideunitstats[sideidx].unit[i].speed > 0 && armies[sideidx][j].speed > sideunitstats[sideidx].unit[i].speed)

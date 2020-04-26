@@ -8,6 +8,7 @@ function recalculate(who, techChange)
 		determineUnitTypes();
 		determineUnitStats(who);
 	}
+	determineUnitBonuses();
 	determineArmyStats(who);
 	determineBattleStats();
 }

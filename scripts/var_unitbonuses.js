@@ -77,8 +77,8 @@ unitbonuses.push(new unitbonus("Marines", "Support Weapons IV", null, null, 3, 3
 unitbonuses.push(new unitbonus("Paratrooper", "Support Weapons IV", null, null, 3, 3));
 unitbonuses.push(new unitbonus("Mountain", "Support Weapons IV", null, null, 3, 3));
 
-unitbonuses.push(new unitbonus("Mechanized", "Mechanized Equipment I", null, null, null, null, null, null, 100));
-unitbonuses.push(new unitbonus("Mechanized", "Mechanized Equipment III", 15, 15));
+unitbonuses.push(new unitbonus("Mechanized", "Mechanized I", null, null, null, null, null, null, 100));
+unitbonuses.push(new unitbonus("Mechanized", "Mechanized III", 15, 15));
 
 unitbonuses.push(new unitbonus("Marines", "Marines II", 5, null, null, null, null, null, null, null, null, null, 5));
 unitbonuses.push(new unitbonus("Marines", "Marines III", null, null, null, null, null, null, null, null, null, null, 5));
@@ -89,9 +89,9 @@ unitbonuses.push(new unitbonus("Mountain", "Mountain Infantry III", null, null, 
 unitbonuses.push(new unitbonus("Paratrooper", "Paratroopers II", 5, null, null, null, null, null, null, null, null, null, 5));
 unitbonuses.push(new unitbonus("Paratrooper", "Paratroopers III", null, null, null, null, null, null, null, null, null, null, 5));
 
-unitbonuses.push(new unitbonus("Marines", "Advanced Special Forces Training", null, null, 5, null, null, null, null, null, null, null, 5));
-unitbonuses.push(new unitbonus("Mountain", "Advanced Special Forces Training", null, null, 5, null, null, null, null, null, null, null, 5));
-unitbonuses.push(new unitbonus("Paratrooper", "Advanced Special Forces Training", null, null, 5, null, null, null, null, null, null, null, 5));
+unitbonuses.push(new unitbonus("Marines", "Special Forces Training", null, null, 5, null, null, null, null, null, null, null, 5));
+unitbonuses.push(new unitbonus("Mountain", "Special Forces Training", null, null, 5, null, null, null, null, null, null, null, 5));
+unitbonuses.push(new unitbonus("Paratrooper", "Special Forces Training", null, null, 5, null, null, null, null, null, null, null, 5));
 
 unitbonuses.push(new unitbonus("Marines", "Elite Forces", 5, null, null, null, null, null, null, null, null, null, 5));
 unitbonuses.push(new unitbonus("Mountain", "Elite Forces", 5, null, null, null, null, null, null, null, null, null, 5));
