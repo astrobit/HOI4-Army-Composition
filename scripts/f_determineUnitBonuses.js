@@ -14,6 +14,7 @@ function determineUnitBonuses()
 			sideunitbonus[j][i].breakthrough = 1.0;
 			sideunitbonus[j][i].armor = 1.0;
 			sideunitbonus[j][i].piercing = 1.0;
+			sideunitbonus[j][i].hardness = 1.0;
 			sideunitbonus[j][i].speed = 1.0;
 			sideunitbonus[j][i].production_cost = 1.0;
 			sideunitbonus[j][i].reliability = 1.0;
