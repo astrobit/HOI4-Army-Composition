@@ -42,7 +42,7 @@ tabrowheadelem.insertAdjacentText("beforeend", "Width");
 tabrowelem.appendChild(tabrowheadelem);
 tabrowheadelem = document.createElement("th");
 tabrowheadelem.style = "text-align:center";
-tabrowheadelem.insertAdjacentText("beforeend", "Organization");
+tabrowheadelem.insertAdjacentText("beforeend", "Survival time (h)");
 tabrowelem.appendChild(tabrowheadelem);
 tabsecelem.appendChild(tabrowelem);
 tableelem.appendChild(tabsecelem);
