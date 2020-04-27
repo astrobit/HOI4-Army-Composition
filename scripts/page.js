@@ -1,9 +1,91 @@
 
-
 	
 //Create Page
-
 var i, j, k;
+
+// Top level tabs
+var mainTabs = [{label:"atk:Tech",text:"Attack Tech"},
+				{label:"atk:Div",text:"Attack Divisions"},
+				{label:"def:Tech",text:"Defense Tech"},
+				{label:"def:Div",text:"Defense Divisions"}
+				];
+
+var tabdivelem = document.createElement("div");
+tabdivelem.className = "tab";
+tabdivelem.id = "MainTabs";
+for (i = 0; i < mainTabs.length; i++)
+{
+	var butelem = document.createElement("button");
+	butelem.className = "tablinks";
+	butelem.id = "tab:" + mainTabs[i].label;
+	butelem.setAttribute("onclick","selectTab(event,'" + mainTabs[i].label + "');");
+	butelem.insertAdjacentText("beforeend", mainTabs[i].text);
+	tabdivelem.appendChild(butelem);
+}
+document.body.appendChild(tabdivelem);
+
+// Summary div
+tabdivelem = document.createElement("div");
+tabdivelem.id = "Summary";
+tabdivelem.style = "text-align:center";
+var tableelem = document.createElement("table");
+tableelem.setAttribute("align","center");
+
+// table header
+var tabsecelem = document.createElement("thead");
+var tabrowelem = document.createElement("tr");
+var tabrowheadelem = document.createElement("th");
+tabrowelem.appendChild(tabrowheadelem);
+tabrowheadelem = document.createElement("th");
+tabrowheadelem.style = "text-align:center";
+tabrowheadelem.insertAdjacentText("beforeend", "Width");
+tabrowelem.appendChild(tabrowheadelem);
+tabrowheadelem = document.createElement("th");
+tabrowheadelem.style = "text-align:center";
+tabrowheadelem.insertAdjacentText("beforeend", "Organization");
+tabrowelem.appendChild(tabrowheadelem);
+tabsecelem.appendChild(tabrowelem);
+tableelem.appendChild(tabsecelem);
+
+// table body
+tabsecelem = document.createElement("tbody");
+tabrowelem = document.createElement("tr");
+tabrowheadelem = document.createElement("th");
+tabrowheadelem.insertAdjacentText("beforeend", "Attacking Army");
+tabrowelem.appendChild(tabrowheadelem);
+tabrowheadelem = document.createElement("td");
+var outputElem = document.createElement("output");
+outputElem.id = "atk:Width";
+tabrowheadelem.appendChild(outputElem);
+tabrowelem.appendChild(tabrowheadelem);
+tabrowheadelem = document.createElement("td");
+var outputElem = document.createElement("output");
+outputElem.id = "atk:Survival";
+tabrowheadelem.appendChild(outputElem);
+tabrowelem.appendChild(tabrowheadelem);
+tabsecelem.appendChild(tabrowelem);
+
+tabrowelem = document.createElement("tr");
+tabrowheadelem = document.createElement("th");
+tabrowheadelem.insertAdjacentText("beforeend", "Defending Army");
+tabrowelem.appendChild(tabrowheadelem);
+tabrowheadelem = document.createElement("td");
+var outputElem = document.createElement("output");
+outputElem.id = "def:Width";
+tabrowheadelem.appendChild(outputElem);
+tabrowelem.appendChild(tabrowheadelem);
+tabrowheadelem = document.createElement("td");
+var outputElem = document.createElement("output");
+outputElem.id = "def:Survival";
+tabrowheadelem.appendChild(outputElem);
+tabrowelem.appendChild(tabrowheadelem);
+tabsecelem.appendChild(tabrowelem);
+tableelem.appendChild(tabsecelem);
+tabdivelem.appendChild(tableelem);
+document.body.appendChild(tabdivelem);
+
+
+
 for (k = 0; k < 2; k++)
 //k = 0;
 {
@@ -23,7 +105,7 @@ for (k = 0; k < 2; k++)
 	}
 	var years = ["1918","1934","1936","1938","1939","1940","1941","1942","1943","1944","1945","1946","1950"];
 	 
-	var tabdivelem = document.createElement("div");
+	tabdivelem = document.createElement("div");
 	tabdivelem.className = "tabcontent";
 	tabdivelem.id = side + ":Tech";
 	var h1elem = document.createElement("h1");
@@ -93,7 +175,7 @@ for (k = 0; k < 2; k++)
 	}
 	MGdivElem.appendChild(divelem);
 	tabdivelem.appendChild(MGdivElem); // add the last one
-	document.body.appendChild(tabdivelem)
+	document.body.appendChild(tabdivelem);
 	
 	tabdivelem = document.createElement("div");
 	tabdivelem.className = "tabcontent";
@@ -126,7 +208,7 @@ for (k = 0; k < 2; k++)
 	tableHeadelem.appendChild(tableRowelem);
     tableelem.appendChild(tableHeadelem);
     tabledivelem.appendChild(tableelem);
-    tabdivelem.appendChild(tabledivelem)
+    tabdivelem.appendChild(tabledivelem);
 
     tabledivelem = document.createElement("div");
     tabledivelem.id = side + ":tableBodyDiv";
@@ -164,7 +246,7 @@ for (k = 0; k < 2; k++)
 	}
     tableelem.appendChild(tableHeadelem);
     tabledivelem.appendChild(tableelem);
-    tabdivelem.appendChild(tabledivelem)
+    tabdivelem.appendChild(tabledivelem);
 
     tabledivelem = document.createElement("div");
     tabledivelem.id = side + ":tableFootDiv";
@@ -204,7 +286,7 @@ for (k = 0; k < 2; k++)
 	tableelem.appendChild(tableHeadelem);
 	tabledivelem.appendChild(tableelem);
 	tabdivelem.appendChild(tabledivelem);
-	document.body.appendChild(tabdivelem)
+	document.body.appendChild(tabdivelem);
 	var elem;
 	for (i = 1; i <= 5; i++)
 	{
