@@ -56,14 +56,14 @@ function determineBattleStats() {
 
     elem = document.getElementById("atk:Width");
     if (elem != null)
-        elem.value = width[0];
+        elem.value = width[0].toPrecision(3);
     elem = document.getElementById("atk:Survival");
     if (elem != null)
-        elem.value = survival[0];
+        elem.value = survival[0].toPrecision(3);
     elem = document.getElementById("def:Width");
     if (elem != null)
-        elem.value = width[1];
+        elem.value = width[1].toPrecision(3);
     elem = document.getElementById("def:Survival");
     if (elem != null)
-        elem.value = survival[1];
+        elem.value = survival[1].toPrecision(3);
 }
