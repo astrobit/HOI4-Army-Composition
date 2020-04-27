@@ -34,6 +34,16 @@ function determineBattleStats() {
     hardness[1] /= (width[1] * 1.0);
 
     attacktotal = hardness[0] / 100.0 * hard_attack[1] + (1.0 - hardness[0] / 100.0) * soft_attack[1];
+	// night effects
+	var nighttime = 0.5;
+	elemTech = document.getElementById("def:Night Vision I");
+	if (elemTech.checked)
+		nighttime *= 1.1;
+	elemTech = document.getElementById("def:Night Vision II");
+	if (elemTech.checked)
+		nighttime *= 1.15;
+	attacktotal *= (0.5 + 0.5*nighttime);
+
     hits = Math.min(breakthrough, attacktotal) * 0.01 + Math.max(attacktotal - breakthrough, 0) * 0.04;
     orgdmg = hits * 2.5;
     if (piercing[1] > armor[0])
@@ -45,6 +55,16 @@ function determineBattleStats() {
 
 
     attacktotal = hardness[1] / 100.0 * hard_attack[0] + (1.0 - hardness[1] / 100.0) * soft_attack[0];
+
+	nighttime = 0.5;
+	elemTech = document.getElementById("atk:Night Vision I");
+	if (elemTech.checked)
+		nighttime *= 1.1;
+	elemTech = document.getElementById("atk:Night Vision II");
+	if (elemTech.checked)
+		nighttime *= 1.15;
+	attacktotal *= (0.5 + 0.5*nighttime);
+
     hits = Math.min(defense, attacktotal) * 0.01 + Math.max(attacktotal - defense, 0) * 0.04;
     orgdmg = hits * 2.5;
     if (piercing[0] > armor[1])
