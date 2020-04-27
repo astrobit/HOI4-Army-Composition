@@ -96,3 +96,47 @@ unitbonuses.push(new unitbonus("Paratrooper", "Special Forces Training", null, n
 unitbonuses.push(new unitbonus("Marines", "Elite Forces", 5, null, null, null, null, null, null, null, null, null, 5));
 unitbonuses.push(new unitbonus("Mountain", "Elite Forces", 5, null, null, null, null, null, null, null, null, null, 5));
 unitbonuses.push(new unitbonus("Paratrooper", "Elite Forces", 5, null, null, null, null, null, null, null, null, null, 5));
+
+// Artillery
+
+unitbonuses.push(new unitbonus("Artillery", "Interwar Artillery", 10));
+unitbonuses.push(new unitbonus("Support Artillery", "Interwar Artillery", 10));
+
+unitbonuses.push(new unitbonus("Artillery", "Improved Artillery Upgrade I", 10));
+unitbonuses.push(new unitbonus("Support Artillery", "Improved Artillery Upgrade I", 10));
+
+unitbonuses.push(new unitbonus("Artillery", "Improved Artillery Upgrade II", 10));
+unitbonuses.push(new unitbonus("Support Artillery", "Improved Artillery Upgrade II", 10));
+
+unitbonuses.push(new unitbonus("Artillery", "Advanced Artillery Upgrade", 10));
+unitbonuses.push(new unitbonus("Support Artillery", "Advanced Artillery Upgrade", 10));
+
+//unitbonuses.push(new unitbonus("Anti-Air", "Anti-Air Upgrade")); 10% air attack bonus
+//unitbonuses.push(new unitbonus("Support Anti-Air", "Anti-Air Upgrade"));
+
+//unitbonuses.push(new unitbonus("Anti-Air", "Improved Anti-Air Upgrade I")); 10% air attack bonus
+//unitbonuses.push(new unitbonus("Support Anti-Air", "Improved Anti-Air Upgrade I"));
+
+//unitbonuses.push(new unitbonus("Anti-Air", "Improved Anti-Air Upgrade II")); 10% air attack bonus
+//unitbonuses.push(new unitbonus("Support Anti-Air", "Improved Anti-Air Upgrade II"));
+
+unitbonuses.push(new unitbonus("Anti-Tank", "Anti-Tank Upgrade",null,10,null,null,null,20));
+unitbonuses.push(new unitbonus("Support Anti-Tank", "Anti-Tank Upgrade",null,10,null,null,null,20));
+
+unitbonuses.push(new unitbonus("Anti-Tank", "Improved Anti-Tank Upgrade I",null,10,null,null,null,20));
+unitbonuses.push(new unitbonus("Support Anti-Tank", "Improved Anti-Tank Upgrade I",null,10,null,null,null,20));
+
+unitbonuses.push(new unitbonus("Anti-Tank", "Improved Anti-Tank Upgrade II",null,10,null,null,null,20));
+unitbonuses.push(new unitbonus("Support Anti-Tank", "Improved Anti-Tank Upgrade II",null,10,null,null,null,20));
+
+unitbonuses.push(new unitbonus("Rocket Artillery", "Rocket Artillery Upgrade I",15));
+unitbonuses.push(new unitbonus("Support Rocket Artillery", "Rocket Artillery Upgrade I",15));
+unitbonuses.push(new unitbonus("Motorized Rocket Artillery", "Rocket Artillery Upgrade I",15));
+
+unitbonuses.push(new unitbonus("Rocket Artillery", "Rocket Artillery Upgrade II",15));
+unitbonuses.push(new unitbonus("Support Rocket Artillery", "Rocket Artillery Upgrade II",15));
+unitbonuses.push(new unitbonus("Motorized Rocket Artillery", "Rocket Artillery Upgrade II",15));
+
+unitbonuses.push(new unitbonus("Motorized Rocket Artillery", "Advanced Rocket Artillery",30));
+
+
