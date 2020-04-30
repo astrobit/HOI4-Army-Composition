@@ -149,6 +149,7 @@ for (i = 0; i < terrains.length; i++) {
     choiceElem.insertAdjacentText("beforeend", terrains[i].name);
     inpElem.appendChild(choiceElem);
 }
+inpElem.value = terrains[0].name;
 tabdivelem.appendChild(inpElem);
 var beElem = document.createElement("br");
 tabdivelem.appendChild(beElem);
@@ -166,6 +167,7 @@ inpElem.style = "text-align:center;width:30px;";
 inpElem.id = idlcl;
 inpElem.name = "Water Modifiers";
 inpElem.value = idlcl;
+inpElem.checked = true;
 inpElem.setAttribute("onchange", "changeStorageByNameCheck('Water Modifiers');recalculate('atk','Army');");
 tabdivelem.appendChild(inpElem);
 
