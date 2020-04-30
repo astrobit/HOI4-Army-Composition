@@ -7,7 +7,8 @@ var i, j, k;
 var mainTabs = [{label:"atk:Tech",text:"Attack Tech"},
 				{label:"atk:Div",text:"Attack Divisions"},
 				{label:"def:Tech",text:"Defense Tech"},
-				{label:"def:Div",text:"Defense Divisions"}
+				{label:"def:Div",text:"Defense Divisions"},
+				{ label: "About", text: "About" }
 				];
 
 var tabdivelem = document.createElement("div");
@@ -420,7 +421,42 @@ for (k = 0; k < 2; k++)
 	tableelem.appendChild(tableHeadelem);
 	tabledivelem.appendChild(tableelem);
 	tabdivelem.appendChild(tabledivelem);
-	document.body.appendChild(tabdivelem);
+    document.body.appendChild(tabdivelem);
+
+
+    tabdivelem = document.createElement("div");
+    tabdivelem.className = "tabcontent";
+    tabdivelem.id = "About";
+    h1elem = document.createElement("h1");
+    h1elem.style = "font-size:20px;text-align:center;";
+    h1elem.insertAdjacentText("beforeend", "About This Page");
+    tabdivelem.appendChild(h1elem);
+
+    var pElem = document.createElement("p");
+    pElem.insertAdjacentText("beforeend", "Use this worksheet to determine the survival time in hours of various armies in HOI4. All calculations are done based on data from the ");
+    var aElem = document.createElement("a");
+    aElem.setAttribute("href", "https://hoi4.paradoxwikis.com/");
+    aElem.insertAdjacentText("beforeend", "Paradox HOI4 Wiki");
+    pElem.appendChild(aElem);
+    pElem.insertAdjacentText("beforeend", ".");
+    tabdivelem.appendChild(pElem);
+    var pElem = document.createElement("p");
+    pElem.insertAdjacentText("beforeend", "This page is written using Javascript. The code is available under a MIT license ");
+    aElem = document.createElement("a");
+    aElem.setAttribute("href", "https://github.com/astrobit/HOI4-Army-Composition/");
+    aElem.insertAdjacentText("beforeend", "on Github");
+    pElem.appendChild(aElem);
+    pElem.insertAdjacentText("beforeend", ".");
+    tabdivelem.appendChild(pElem);
+
+
+    pElem = document.createElement("p");
+    pElem.insertAdjacentText("beforeend", "Copyright (c) Brian W. Mulligan 2020");
+    tabdivelem.appendChild(pElem);
+    document.body.appendChild(tabdivelem);
+
+
+
 	var elem;
 	for (i = 1; i <= 5; i++)
 	{
@@ -462,6 +498,8 @@ for (k = 0; k < 2; k++)
 	if (elem != null)
 		elem.value = 0;
 } // end of attack / defense loop
+
+
 
 selectTab(null,"tab:atk:Div");
 document.getElementById("tab:atk:Div").className += " active";
