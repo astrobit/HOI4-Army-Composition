@@ -435,7 +435,13 @@ for (k = 0; k < 2; k++)
     tabdivelem.appendChild(h1elem);
 
     var pElem = document.createElement("p");
-    pElem.insertAdjacentText("beforeend", "Use this worksheet to determine the survival time in hours of various armies in HOI4. All calculations are done based on data from the ");
+    pElem.insertAdjacentText("beforeend", "Use this worksheet to determine the survival time in hours of various armies in HOI4. At present, the calculator does not take division experience, commander skills, air support, naval support, decryption, stacking or combat penalties, supply bonuses, flanking bonuses, country bonuses, combat tactics, or doctrinal bonuses. The data are provided only for informational purposes, and the author(s) take no responsilibilty for actual injuries or damage resulting from the use of information on this site. ");
+    tabdivelem.appendChild(pElem);
+        
+        
+        
+    var pElem = document.createElement("p");
+    pElem.insertAdjacentText("beforeend", "All calculations are done based on data from the ");
     var aElem = document.createElement("a");
     aElem.setAttribute("href", "https://hoi4.paradoxwikis.com/");
     aElem.insertAdjacentText("beforeend", "Paradox HOI4 Wiki");
