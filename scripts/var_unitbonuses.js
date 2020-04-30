@@ -77,7 +77,7 @@ unitbonuses.push(new unitbonus("Marines", "Support Weapons IV", null, null, 3, 3
 unitbonuses.push(new unitbonus("Paratrooper", "Support Weapons IV", null, null, 3, 3));
 unitbonuses.push(new unitbonus("Mountain", "Support Weapons IV", null, null, 3, 3));
 
-unitbonuses.push(new unitbonus("Mechanized", "Mechanized I", null, null, null, null, null, null, 100));
+unitbonuses.push(new unitbonus("Motorized", "Mechanized I", null, null, null, null, null, null, 100));
 unitbonuses.push(new unitbonus("Mechanized", "Mechanized III", 15, 15));
 
 unitbonuses.push(new unitbonus("Marines", "Marines II", 5, null, null, null, null, null, null, null, null, null, 5));
