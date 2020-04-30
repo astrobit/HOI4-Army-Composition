@@ -44,6 +44,29 @@ function determineBattleStats() {
 		nighttime *= 1.15;
 	attacktotal *= (0.5 + 0.5*nighttime);
 
+    var elemEntrench = document.getElementById("Entrenchment");
+    defense *= 1.0 + 0.02 * Number(elemEntrench.value);
+    
+    var elemFort = document.getElementById("Fort Level");
+    breakthrough *= 1.0 - 0.15 * Number(elemFort.value);   
+
+    var elemSmallRiver = document.getElementById("Small River");
+    var elemLargeRiver = document.getElementById("Large River");
+    var elemAmphibious = document.getElementById("Amphibious");
+
+    var elemTerrain = document.getElementById("Terrain");
+    var terrainIdx = -1;
+    for (i = 0; i < terrains.length && terrainIdx  == -1; i++)
+    {
+        if (terrains[i].name == elemTerrain.value)
+            terrainIdx = i;
+    }
+    if (terrainIdx == -1)
+        console.log("could not find terrain" + elemTerrain.value);
+    breakthrough *= 1.0 - terrains[terrainIdx].attack * 0.01;
+   
+    
+
     hits = Math.min(breakthrough, attacktotal) * 0.01 + Math.max(attacktotal - breakthrough, 0) * 0.04;
     orgdmg = hits * 2.5;
     if (piercing[1] > armor[0])
@@ -55,6 +78,20 @@ function determineBattleStats() {
 
 
     attacktotal = hardness[1] / 100.0 * hard_attack[0] + (1.0 - hardness[1] / 100.0) * soft_attack[0];
+    attacktotal *= 1.0 - 0.15 * Number(elemFort.value);
+    attacktotal *= 1.0 - terrains[terrainIdx].attack * 0.01;
+    if (elemLargeRiver.checked)
+        attacktotal *= 0.4;
+    else
+    {
+        if (elemSmallRiver.checked)
+            attacktotal *= 0.7;
+        else
+        {
+            if (elemAmphibious.checked)
+                attacktotal *= 0.3;
+        }
+    }
 
 	nighttime = 0.5;
 	elemTech = document.getElementById("atk:Night Vision I");

@@ -84,6 +84,140 @@ tableelem.appendChild(tabsecelem);
 tabdivelem.appendChild(tableelem);
 document.body.appendChild(tabdivelem);
 
+// Summary div
+tabdivelem = document.createElement("div");
+tabdivelem.id = "Modifiers";
+tabdivelem.style = "text-align:center";
+var h1elem = document.createElement("h2");
+h1elem.style = "font-size:20px;text-align:center;";
+h1elem.insertAdjacentText("beforeend", "Combat Modifiers");
+tabdivelem.appendChild(h1elem);
+
+var idlcl = "Fort Level";
+
+var labelelem = document.createElement("label");
+labelelem.style = "padding-right:1em;"
+labelelem.setAttribute("for", idlcl);
+labelelem.insertAdjacentText("beforeend", idlcl);
+tabdivelem.appendChild(labelelem);
+
+var inpElem = document.createElement("input");
+inpElem.type = "number";
+inpElem.style = "text-align:center;width:30px;";
+inpElem.id = idlcl;
+inpElem.name = idlcl;
+inpElem.setAttribute("onchange", "changeStorageNumeric('" + idlcl + "');recalculate('def','Army');");
+inpElem.setAttribute("min", "0");
+inpElem.setAttribute("max", "10");
+tabdivelem.appendChild(inpElem);
+
+idlcl = "Entrenchment";
+labelelem = document.createElement("label");
+labelelem.style = "padding-right:1em;padding-left:1em;"
+labelelem.setAttribute("for", idlcl);
+labelelem.insertAdjacentText("beforeend", idlcl);
+tabdivelem.appendChild(labelelem);
+
+inpElem = document.createElement("input");
+inpElem.type = "number";
+inpElem.style = "text-align:center;width:30px;";
+inpElem.id = idlcl;
+inpElem.name = idlcl;
+inpElem.setAttribute("onchange", "changeStorageNumeric('" + idlcl + "');recalculate('def','Army');");
+inpElem.setAttribute("min", "0");
+inpElem.setAttribute("max", "70");
+tabdivelem.appendChild(inpElem);
+document.body.appendChild(tabdivelem);
+
+idlcl = "Terrain";
+labelelem = document.createElement("label");
+labelelem.style = "padding-right:1em;padding-left:1em;"
+labelelem.setAttribute("for", idlcl);
+labelelem.insertAdjacentText("beforeend", idlcl);
+tabdivelem.appendChild(labelelem);
+
+inpElem = document.createElement("select");
+inpElem.style = "text-align:center;width:100px;";
+inpElem.id = idlcl;
+inpElem.name = idlcl;
+inpElem.setAttribute("onchange", "changeStorageNumeric('" + idlcl + "');recalculate('def','Army');");
+
+for (i = 0; i < terrains.length; i++) {
+    var choiceElem = document.createElement("option");
+    choiceElem.value = terrains[i].name;
+    choiceElem.insertAdjacentText("beforeend", terrains[i].name);
+    inpElem.appendChild(choiceElem);
+}
+tabdivelem.appendChild(inpElem);
+var beElem = document.createElement("br");
+tabdivelem.appendChild(beElem);
+
+idlcl = "No Water";
+labelelem = document.createElement("label");
+labelelem.style = "padding-right:1em;padding-left:1em;"
+labelelem.setAttribute("for", idlcl);
+labelelem.insertAdjacentText("beforeend", idlcl);
+tabdivelem.appendChild(labelelem);
+
+inpElem = document.createElement("input");
+inpElem.type = "radio";
+inpElem.style = "text-align:center;width:30px;";
+inpElem.id = idlcl;
+inpElem.name = "Water Modifiers";
+inpElem.value = idlcl;
+inpElem.setAttribute("onchange", "changeStorageByNameCheck('Water Modifiers');recalculate('atk','Army');");
+tabdivelem.appendChild(inpElem);
+
+idlcl = "Small River";
+labelelem = document.createElement("label");
+labelelem.style = "padding-right:1em;padding-left:1em;"
+labelelem.setAttribute("for", idlcl);
+labelelem.insertAdjacentText("beforeend", idlcl);
+tabdivelem.appendChild(labelelem);
+
+inpElem = document.createElement("input");
+inpElem.type = "radio";
+inpElem.style = "text-align:center;width:30px;";
+inpElem.id = idlcl;
+inpElem.name = "Water Modifiers";
+inpElem.value = idlcl;
+inpElem.setAttribute("onchange", "changeStorageByNameCheck('Water Modifiers');recalculate('atk','Army');");
+tabdivelem.appendChild(inpElem);
+
+idlcl = "Large River";
+labelelem = document.createElement("label");
+labelelem.style = "padding-right:1em;padding-left:1em;"
+labelelem.setAttribute("for", idlcl);
+labelelem.insertAdjacentText("beforeend", idlcl);
+tabdivelem.appendChild(labelelem);
+
+inpElem = document.createElement("input");
+inpElem.type = "radio";
+inpElem.style = "text-align:center;width:30px;";
+inpElem.id = idlcl;
+inpElem.name = "Water Modifiers";
+inpElem.value = idlcl;
+inpElem.setAttribute("onchange", "changeStorageByNameCheck('Water Modifiers');recalculate('atk','Army');");
+tabdivelem.appendChild(inpElem);
+
+idlcl = "Amphibious";
+labelelem = document.createElement("label");
+labelelem.style = "padding-right:1em;padding-left:1em;"
+labelelem.setAttribute("for", idlcl);
+labelelem.insertAdjacentText("beforeend", idlcl);
+tabdivelem.appendChild(labelelem);
+
+inpElem = document.createElement("input");
+inpElem.type = "radio";
+inpElem.style = "text-align:center;width:30px;";
+inpElem.id = idlcl;
+inpElem.name = "Water Modifiers";
+inpElem.value = idlcl;
+inpElem.setAttribute("onchange", "changeStorageByNameCheck('Water Modifiers');recalculate('atk','Army');");
+tabdivelem.appendChild(inpElem);
+
+document.body.appendChild(tabdivelem);
+
 
 
 for (k = 0; k < 2; k++)
@@ -262,7 +396,7 @@ for (k = 0; k < 2; k++)
 	tableHelem.insertAdjacentText("beforeend", "Stats");
 	tableRowelem.appendChild(tableHelem);
 	tableHeadelem.appendChild(tableRowelem);
-    var stats = ["Organization", "HP", "Soft Attack", "Hard Attack", "Piercing", "Armor", "Defense", "Breakthrough", "Hardness", "Width" ]
+    var stats = ["Organization", "HP", "Soft Attack", "Hard Attack", "Piercing", "Armor", "Defense", "Breakthrough", "Hardness", "Width", "Production Cost" ]
 	for (i = 0; i < stats.length; i++)
 	{
 		tableRowelem = document.createElement("tr");
@@ -338,6 +472,11 @@ if (lsInit != "true")
 	techsYear("def",1936,false);
 	localStorage.setItem("initialized","true");
 }
+
+retrieveStorageNumeric("Fort Level");
+retrieveStorageNumeric("Entrenchment");
+retrieveStorageNumeric("Terrain");
+retrieveStorageByNameCheck("Water Modifiers");
 for (j = 0; j < 2; j++)
 {
 	if (j == 0)

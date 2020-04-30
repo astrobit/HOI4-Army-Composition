@@ -34,3 +34,26 @@ function retrieveStorageNumeric(source)
 	else
 		console.log("could not find " + source + " for storage");
 }
+
+function changeStorageByNameCheck(source) {
+    var elem = document.getElementsByName(source);
+    if (elem != null && elem.length != 0) {
+        for (i = 0; i < elem.length; i++) {
+            if (elem[i].checked)
+                localStorage.setItem(source, elem[i].value);
+        }
+    }
+    else
+        console.log("could not find " + source + " for storage");
+}
+function retrieveStorageByNameCheck(source) {
+    var elem = document.getElementsByName(source);
+    if (elem != null && elem.length != 0) {
+        for (i = 0; i < elem.length; i++) {
+            elem[i].checked = elem[i].value == localStorage.getItem(source);
+        }
+    }
+    else
+        console.log("could not find " + source + " for storage");
+}
+
